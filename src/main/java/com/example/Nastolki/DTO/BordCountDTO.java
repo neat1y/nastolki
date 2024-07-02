@@ -2,12 +2,30 @@ package com.example.Nastolki.DTO;
 
 import jakarta.persistence.Column;
 
+import java.util.List;
+
 public class BordCountDTO {
     private Integer count;
     private String video;
-    private String img;
+    private List<byte[]> Imgs;
     private String description;
     private String title;
+
+    public List<byte[]> getImgs() {
+        return Imgs;
+    }
+
+    public void setImgs(List<byte[]> imgs) {
+        Imgs = imgs;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     private Integer min_price;
 
@@ -27,12 +45,12 @@ public class BordCountDTO {
         this.video = video;
     }
 
-    public String getImg() {
-        return img;
+    public List<byte[]> getImg() {
+        return Imgs;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImg(List<byte[]> Imgs) {
+        this.Imgs = Imgs;
     }
 
     public String getDescription() {

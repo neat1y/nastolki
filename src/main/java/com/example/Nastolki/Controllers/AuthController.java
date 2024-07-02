@@ -58,12 +58,12 @@ public class AuthController {
            Map<String,String> qwe=new HashMap<>();
 
            if(person.isPresent()){
-               qwe.put("errror","name has");
+               qwe.put("error","name has");
                return qwe;
            }
            Person person1=person_to_personDTO.map_to_Person(regDTO);
            person1.setPassword(passwordEncoder.encode(person1.getPassword()));
-           person1.setPerson_role("Role_USER");
+           person1.setPerson_role("ROLE_USER");
           String jwt= jwtUtil.generateToken(person1.getName());
           personRepositories.save(person1);
           qwe.put("jwt",jwt);

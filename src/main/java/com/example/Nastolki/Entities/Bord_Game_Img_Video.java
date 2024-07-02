@@ -3,7 +3,7 @@ package com.example.Nastolki.Entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Bord_Count_Img")
+@Table(name = "bord_game_img_and_video")
 public class Bord_Game_Img_Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

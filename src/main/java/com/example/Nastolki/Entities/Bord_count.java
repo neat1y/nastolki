@@ -15,7 +15,7 @@ public class Bord_count {
     @Column(name = "video")
     private String video;
     @OneToMany(mappedBy = "bordCount")
-    private Set<Bord_Count_Img> imgs;
+    private Set<bord_count_img_video> imgs;
     @Column(name = "description")
     private String description;
 
@@ -25,7 +25,7 @@ public class Bord_count {
     public Bord_count() {
     }
 
-    public Bord_count(String title_id, Integer count, String video, Set<Bord_Count_Img> img, String description, Integer min_price) {
+    public Bord_count(String title_id, Integer count, String video, Set<bord_count_img_video> img, String description, Integer min_price) {
         this.title_id = title_id;
         this.count = count;
         this.video = video;
@@ -58,11 +58,11 @@ public class Bord_count {
         this.video = video;
     }
 
-    public Set<Bord_Count_Img> getImg() {
+    public Set<bord_count_img_video> getImg() {
         return imgs;
     }
 
-    public void setImg(Set<Bord_Count_Img> img) {
+    public void setImg(Set<bord_count_img_video> img) {
         this.imgs = img;
     }
 
