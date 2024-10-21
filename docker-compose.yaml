@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: nastolki_db
+    environment:
+      POSTGRES_DB: nastolki_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5433:5432"
+
+  app:
+    build: .
+    container_name: nastolki
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/nastolki_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: secret
+      UPLOAD_DIR: /home/photos
+    ports:
+      - "8081:8081"
+
+volumes:
+  postgres_data:
